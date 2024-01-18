@@ -1,5 +1,5 @@
 -- Add boost packages
-add_requires("boost", "spdlog")
+add_requires("boost", "spdlog", "sfml 2.6.1")
 
 -- Create the Stellar-Engine project
 target("flappybird")
@@ -9,6 +9,8 @@ target("flappybird")
 
     -- Set the C++ standard to C++20
     set_languages("cxx20")
+
+    add_ldflags("-ObjC")
 
     -- Add the source files
     add_files("src/**.cpp")
@@ -25,8 +27,8 @@ target("flappybird")
     -- Set the target directory to bin/tests
     set_targetdir("bin")
 
-    -- Add the boost packages
-    add_packages("boost", "spdlog")
+    -- Add packages
+    add_packages("boost", "spdlog", "sfml")
 
     -- Add the system libraries
     add_syslinks("pthread")
